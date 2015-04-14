@@ -36,8 +36,8 @@ def countPlayers():
     c = db.cursor()
     c.execute("SELECT COUNT(name) as numberPlayers FROM players;")
     num = list(c.fetchone())
-    return num[0]
     db.close()
+    return num[0]
 
 
 #werkt!
@@ -54,8 +54,8 @@ def registerPlayer(name):
     c = db.cursor()
     c.execute("INSERT INTO players (name) VALUES (%s);", (name,))
     db.commit()
-    print "player added: %s" %name
     db.close()
+    print "player added: %s" %name
 
 
 ##Verder gaan! 
@@ -76,9 +76,8 @@ def playerStandings():
     c = db.cursor()
     c.execute("SELECT * FROM standings;")
     standings = c.fetchall()
-    return standings
     db.close()
-
+    return standings
 
 def reportMatch(winner, loser):
     """Records the outcome of a single match between two players.
@@ -113,6 +112,5 @@ def swissPairings():
     c = db.cursor()
     c.execute("SELECT p1_id, p1_name, p2_id, p2_name FROM pairings;")
     pairings = list(c.fetchall())
-    return pairings
     db.close()
-
+    return pairings
