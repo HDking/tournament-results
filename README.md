@@ -3,6 +3,13 @@ Welcome to the github page of my implementation of the Udacity project nr 2: Tou
 In the tournament folder you will find the tournament.py file which contains the functions for the 
 tournament results and tournament.sql where the SQL queries are stored. 
 
+##Set up the database before you can start the program
+In your console/terminal:
+
+`$ createdb tournament psql -d tournament -f /tournament.sql`
+
+`$ python tournament_test.py`
+
 ##Tournament.py functions
 **connect()**
 Connects with the database
